@@ -1,0 +1,486 @@
+/* variables */
+:root {
+    --verde: #31523b;
+    --verde-claro: #728574;
+    --crema: #e9e2c9;
+    --fondo: #f4efe4;
+    --blanco-roto: #faf7f0;
+    --texto: #302c21;
+    --borde: #d8cfbc;
+}
+
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+.contenedor {
+    width: 1120px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.estrecho {
+    width: 1040px;
+}
+
+/* colores compartidos */
+.footer, .oferta-verde, .boton-verde {
+    background: var(--verde);
+    color: #fff;
+}
+
+.boton-crema, .aviso, .garantias {
+    background: var(--crema);
+    color: var(--texto);
+}
+
+.oferta-clara, .categoria, .producto, .consejo, .paso {
+    background: var(--blanco-roto);
+}
+
+.oferta-clara, .producto, .aviso, .consejo, .paso {
+    border: 1px solid var(--borde);
+}
+
+/* textos comunes */
+.intro {
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+}
+
+/* "a" de un solo piso de Inter, como en el diseño */
+.intro, .boton-verde, .aviso strong {
+    font-feature-settings: "cv11";
+}
+
+.etiqueta {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--verde);
+    margin-bottom: 12px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 14px 22px;
+    border: none;
+    font: 800 14px 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+/* cabecera */
+.header, .nav, .productos-cabecera, .footer-invitacion, .footer-cierre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.header {
+    min-height: 62px;
+    padding: 12px 3%;
+    background: white;
+    border-bottom: 1px solid #e4e8df;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--verde);
+}
+
+.nav {
+    gap: 28px;
+    font-weight: 600;
+}
+
+.nav .activo {
+    color: var(--verde);
+}
+
+/* hero */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 560px;
+    padding: 40px 6%;
+    background: url(../img/campo.jpg) center / cover;
+    color: white;
+}
+
+.hero-caja {
+    flex: 0 1 660px;
+    padding: 32px 36px 32px 33px;
+    background: rgba(21, 42, 29, 0.82);
+    border-left: 3px solid var(--crema);
+}
+
+.hero .etiqueta, .footer .etiqueta {
+    color: var(--crema);
+}
+
+.hero h1 {
+    max-width: 480px;
+    margin: 14px 0 18px;
+    font-size: 58px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero .intro {
+    max-width: 440px;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.hero .boton, .detalle-info .boton {
+    padding: 16px 28px;
+    font-size: 15px;
+}
+
+/* rejillas con flexbox */
+.ofertas, .categorias, .productos, .pasos, .footer-columnas, .detalle-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.oferta { flex: 1 1 300px; }
+.categoria, .producto { flex: 1 1 200px; }
+.paso, .footer-columna { flex: 1 1 250px; }
+
+/* ofertas */
+.ofertas {
+    margin-top: 24px;
+}
+
+.oferta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 170px;
+    padding: 24px;
+    font-weight: 500;
+}
+
+.oferta h2 {
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.oferta p:last-child {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.oferta-salvia {
+    background: #dfe2c4;
+}
+
+/* categorías */
+.categorias-seccion h2 {
+    margin: 32px 0 18px;
+}
+
+.categoria {
+    padding: 10px 10px 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.categoria img {
+    height: 150px;
+    margin-bottom: 14px;
+}
+
+/* productos */
+.productos-seccion {
+    margin: 50px auto 60px;
+}
+
+.productos-cabecera {
+    margin-bottom: 20px;
+}
+
+.ver-todo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.productos {
+    gap: 20px;
+}
+
+.producto {
+    padding: 14px;
+}
+
+.producto img {
+    height: 180px;
+}
+
+.producto-insignia {
+    margin: 12px 0;
+    font-size: 12px;
+    font-weight: 800;
+    color: #c8642a;
+}
+
+.producto-nombre {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.producto-descripcion {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #5e675d;
+}
+
+.producto-precio, .precio-grande {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--verde);
+}
+
+/* tienda */
+.tienda {
+    padding: 40px 0 60px;
+}
+
+.tienda h1 {
+    margin: 18px 0;
+}
+
+.tienda .producto {
+    min-height: 390px;
+}
+
+.aviso {
+    display: flex;
+    gap: 6px 24px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 18px 24px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.aviso strong {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* detalle de producto */
+.detalle {
+    padding: 50px 0 70px;
+}
+
+.detalle-principal {
+    gap: 40px;
+}
+
+.detalle-imagen, .detalle-info {
+    flex: 1 1 400px;
+    min-width: 0;
+}
+
+.detalle-imagen {
+    height: 500px;
+}
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.precio-grande {
+    font-size: 32px;
+}
+
+.garantias {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 22px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.garantias h2 {
+    font-size: 15px;
+    letter-spacing: 0;
+}
+
+.garantia + .garantia {
+    padding-top: 13px;
+    border-top: 1px solid var(--borde);
+}
+
+.garantia h3 {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.consejo {
+    margin: 40px 0;
+    padding: 30px;
+}
+
+.consejo .intro {
+    max-width: 740px;
+    margin: 18px 0;
+}
+
+.pasos {
+    margin-top: 20px;
+}
+
+.paso {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.paso .etiqueta {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* pie de página */
+.footer {
+    padding: 50px 0 24px;
+    font-size: 15px;
+}
+
+.footer .etiqueta {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.footer h2 {
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.footer-invitacion, .footer-columnas {
+    padding: 0 0 30px;
+    border-bottom: 1px solid var(--verde-claro);
+}
+
+.footer-columnas {
+    gap: 40px;
+    padding-top: 30px;
+}
+
+.footer-marca {
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.footer-columna p {
+    line-height: 1.5;
+}
+
+.footer-marca + p {
+    max-width: 290px;
+}
+
+.footer h3 {
+    margin-bottom: 11px;
+    font-size: 16px;
+}
+
+.footer-enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    font-weight: 500;
+}
+
+.redes {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.redes a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--crema);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.redes img {
+    width: 18px;
+}
+
+.footer-cierre {
+    padding-top: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
