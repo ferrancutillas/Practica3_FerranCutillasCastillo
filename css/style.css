@@ -150,7 +150,7 @@ h2 {
     align-items: center;
     min-height: 560px;
     padding: 40px 6%;
-    background: url(../img/campo.jpg) center / cover;
+    background: url(../img/campo.webp) center / cover;
     color: white;
 }
 
@@ -483,4 +483,23 @@ h2 {
     padding-top: 20px;
     font-size: 13px;
     font-weight: 500;
+}
+
+/* licencia Creative Commons */
+.licencia a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.licencia-iconos {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.licencia-iconos img {
+    width: 1.1em;
+    height: 1.1em;
+    filter: invert(1); /* con etso como los iconos de CC son negros los pasamos a blanco para el fondo verde */
 }
