@@ -1,4 +1,4 @@
-/* variables */
+/* ===== VARIABLES ===== */
 :root {
     --verde: #31523b;
     --verde-claro: #728574;
@@ -9,7 +9,7 @@
     --borde: #d8cfbc;
 }
 
-/* base */
+/* ===== BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -53,8 +53,9 @@ h2 {
     letter-spacing: -0.5px;
 }
 
+/* ===== CONTENEDORES ===== */
 .contenedor {
-    width: 1120px;
+    width: 1360px;
     max-width: calc(100% - 40px);
     margin: 0 auto;
 }
@@ -63,7 +64,7 @@ h2 {
     width: 1040px;
 }
 
-/* colores compartidos */
+/* ===== COLORES COMPARTIDOS ===== */
 .footer, .oferta-verde, .boton-verde {
     background: var(--verde);
     color: #fff;
@@ -82,16 +83,11 @@ h2 {
     border: 1px solid var(--borde);
 }
 
-/* textos comunes */
+/* ===== TEXTOS Y BOTONES COMUNES ===== */
 .intro {
     font-size: 16px;
     line-height: 1.45;
     letter-spacing: -0.02em;
-}
-
-/* "a" de un solo piso de Inter, como en el diseño */
-.intro, .boton-verde, .aviso strong {
-    font-feature-settings: "cv11";
 }
 
 .etiqueta {
@@ -110,7 +106,7 @@ h2 {
     cursor: pointer;
 }
 
-/* cabecera */
+/* ===== CABECERA ===== */
 .header, .nav, .productos-cabecera, .footer-invitacion, .footer-cierre {
     display: flex;
     justify-content: space-between;
@@ -144,17 +140,27 @@ h2 {
     color: var(--verde);
 }
 
-/* hero */
+/* ===== HERO ===== */
 .hero {
     display: flex;
     align-items: center;
-    min-height: 560px;
+    min-height: 65vh;
     padding: 40px 6%;
-    background: url(../img/campo.webp) center / cover;
     color: white;
+    position: relative;
+}
+
+/* vídeo de fondo: ocupa todo el hero, por detrás de la caja de texto */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-caja {
+    position: relative;
     flex: 0 1 660px;
     padding: 32px 36px 32px 33px;
     background: rgba(21, 42, 29, 0.82);
@@ -184,7 +190,7 @@ h2 {
     font-size: 15px;
 }
 
-/* rejillas con flexbox */
+/* ===== REJILLAS CON FLEXBOX ===== */
 .ofertas, .categorias, .productos, .pasos, .footer-columnas, .detalle-principal {
     display: flex;
     flex-wrap: wrap;
@@ -195,7 +201,7 @@ h2 {
 .categoria, .producto { flex: 1 1 200px; }
 .paso, .footer-columna { flex: 1 1 250px; }
 
-/* ofertas */
+/* ===== OFERTAS ===== */
 .ofertas {
     margin-top: 24px;
 }
@@ -224,7 +230,7 @@ h2 {
     background: #dfe2c4;
 }
 
-/* categorías */
+/* ===== CATEGORÍAS ===== */
 .categorias-seccion h2 {
     margin: 32px 0 18px;
 }
@@ -241,7 +247,42 @@ h2 {
     margin-bottom: 14px;
 }
 
-/* productos */
+/* ===== SONIDOS DEL HUERTO (AUDIO) ===== */
+.multimedia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.multimedia-imagen, .multimedia-texto {
+    flex: 1 1 400px;
+    min-width: 0;
+}
+
+.multimedia-imagen img {
+    aspect-ratio: 16 / 9;
+}
+
+.multimedia-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.multimedia-audio summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--verde);
+}
+
+.multimedia-audio audio {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* ===== PRODUCTOS ===== */
 .productos-seccion {
     margin: 50px auto 60px;
 }
@@ -294,7 +335,7 @@ h2 {
     color: var(--verde);
 }
 
-/* tienda */
+/* ===== PÁGINA TIENDA ===== */
 .tienda {
     padding: 40px 0 60px;
 }
@@ -322,7 +363,7 @@ h2 {
     font-weight: 800;
 }
 
-/* detalle de producto */
+/* ===== PÁGINA DETALLE DE PRODUCTO ===== */
 .detalle {
     padding: 50px 0 70px;
 }
@@ -404,7 +445,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* pie de página */
+/* ===== PIE DE PÁGINA ===== */
 .footer {
     padding: 50px 0 24px;
     font-size: 15px;
@@ -485,7 +526,7 @@ h2 {
     font-weight: 500;
 }
 
-/* licencia Creative Commons */
+/* ===== LICENCIA CREATIVE COMMONS ===== */
 .licencia a {
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -501,5 +542,72 @@ h2 {
 .licencia-iconos img {
     width: 1.1em;
     height: 1.1em;
-    filter: invert(1); /* con etso como los iconos de CC son negros los pasamos a blanco para el fondo verde */
+    filter: invert(1); /* los iconos de CC son negros: se invierten a blanco para el fondo verde */
+}
+
+/* ===== RESPONSIVE: TABLET (hasta 900px) ===== */
+@media (max-width: 900px) {
+    .hero {
+        min-height: 440px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        letter-spacing: -1px;
+    }
+
+    .detalle-imagen {
+        height: 380px;
+    }
+
+    .footer h2 {
+        font-size: 28px;
+    }
+}
+
+/* ===== RESPONSIVE: MÓVIL (hasta 600px) ===== */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav {
+        gap: 18px;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 24px 16px;
+    }
+
+    .hero-caja {
+        padding: 24px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .categoria {
+        flex-basis: calc(50% - 8px);
+    }
+
+    .categoria img {
+        height: 110px;
+    }
+
+    .detalle-imagen {
+        height: 260px;
+    }
+
+    .footer-invitacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
