@@ -1,0 +1,156 @@
+// ===== ANIMACIONES (Práctica 7) =====
+
+$duracion-slider: 20s; // una vuelta completa
+
+// ===== 1. SLIDER =====
+// La pista tiene 5 fotos en fila (la última es copia de la primera)
+.slider-seccion {
+    margin-top: 50px;
+
+    h2 {
+        margin-bottom: 18px;
+    }
+}
+
+.slider {
+    overflow: hidden; // solo se ve una foto
+    border: 1px solid $borde;
+}
+
+.slider-pista {
+    display: flex;
+    width: 500%; // 5 fotos
+    animation: deslizar $duracion-slider ease-in-out infinite;
+    will-change: transform; // para que vaya más fluido
+}
+
+.slider-foto {
+    position: relative;
+    width: 20%; // 100% / 5 fotos
+    margin: 0;
+
+    img {
+        height: 420px;
+
+        @media (max-width: 600px) {
+            height: 260px;
+        }
+    }
+
+    // Texto sobre la foto
+    figcaption {
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        max-width: 420px;
+        padding: 14px 18px;
+        background: rgba($verde-noche, 0.85);
+        border-left: 3px solid $crema;
+        color: #fff;
+        font-size: 15px;
+        line-height: 1.4;
+
+        strong {
+            display: block;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            font-size: 13px;
+        }
+    }
+}
+
+// Cada foto se queda quieta y luego la pista se mueve un 20%
+@keyframes deslizar {
+    0%, 20%   { transform: translateX(0); }      // foto 1
+    25%, 45%  { transform: translateX(-20%); }   // foto 2
+    50%, 70%  { transform: translateX(-40%); }   // foto 3
+    75%, 95%  { transform: translateX(-60%); }   // foto 4
+    100%      { transform: translateX(-80%); }   // copia de la foto 1
+}
+
+// ===== 2. TEXTO DEL HERO =====
+// Aparece subiendo, uno detrás de otro
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-caja > * {
+    animation: aparecer 0.8s ease-out both; // both: empieza invisible y se queda visible
+}
+
+.hero-caja .etiqueta { animation-delay: 0.2s; }
+.hero-caja h1        { animation-delay: 0.4s; }
+.hero-caja .intro    { animation-delay: 0.6s; }
+.hero-caja .boton    { animation-delay: 0.8s; }
+
+// ===== 3. TARJETAS DE PRODUCTO =====
+.producto,
+.card-semilla {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        opacity: 1; // quita la opacidad de los enlaces
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(48, 44, 33, 0.15);
+    }
+}
+
+// ===== 4. ZOOM EN LAS CATEGORÍAS =====
+// El div recorta la imagen para que no se salga
+.categoria-imagen {
+    overflow: hidden;
+
+    img {
+        transition: transform 0.5s ease;
+    }
+}
+
+.categoria:hover {
+    opacity: 1;
+
+    img {
+        transform: scale(1.1);
+    }
+}
+
+// ===== 5. BOTONES =====
+.boton,
+.btn {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(48, 44, 33, 0.18);
+    }
+
+    &:active {
+        transform: translateY(0); // al pulsar vuelve a su sitio
+    }
+}
+
+.boton-verde:hover {
+    background: #26412e; // verde más oscuro
+}
+
+.boton-crema:hover {
+    background: #fff;
+}
+
+// Los botones − / + de la cesta no se mueven
+.btn-group .btn:hover {
+    transform: none;
+    box-shadow: none;
+}

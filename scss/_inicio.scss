@@ -128,9 +128,12 @@
     font-size: 18px;
     font-weight: 800;
 
+    .categoria-imagen {
+        margin-bottom: 14px;
+    }
+
     img {
         height: 150px;
-        margin-bottom: 14px;
     }
 
     @media (max-width: 600px) {
