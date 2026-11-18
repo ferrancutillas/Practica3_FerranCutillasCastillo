@@ -1,0 +1,25 @@
+// ===== NAVBAR =====
+
+.navbar {
+    min-height: 62px;
+    font-size: 15px;
+    font-weight: 600;
+
+    // Logo
+    .logo {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+        color: $verde;
+    }
+
+    // Página actual
+    .nav-link.active {
+        color: $verde;
+        font-weight: 800;
+    }
+
+    .badge {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,70 @@
+// ===== FORMULARIOS (login, registro y pago) =====
+
+.pagina-formulario {
+    padding: 50px 0 70px;
+}
+
+// Tarjeta de login y registro
+.tarjeta-acceso {
+    @include caja-clara;
+    overflow: hidden;
+
+    .acceso-imagen {
+        height: 100%;
+        min-height: 260px;
+    }
+
+    .acceso-formulario {
+        padding: 40px;
+
+        @media (max-width: 600px) {
+            padding: 28px 20px;
+        }
+    }
+
+    h1 {
+        font-size: 34px;
+        margin-bottom: 8px;
+    }
+}
+
+// Etiquetas de los campos
+.form-label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+// Bloques del pago
+.bloque-pago {
+    @include caja-clara;
+    padding: 28px;
+
+    h2 {
+        font-size: 22px;
+        letter-spacing: 0;
+        margin-bottom: 18px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 20px;
+    }
+}
+
+// Cesta
+.resumen-cesta {
+    small {
+        color: $gris-texto;
+    }
+
+    // Número entre − y +
+    .cantidad-cesta {
+        min-width: 38px;
+        opacity: 1;
+    }
+}
+
+// Modal de aviso
+.modal-header {
+    background: $verde;
+    color: #fff;
+}

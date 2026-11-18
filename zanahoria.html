@@ -12,18 +12,40 @@
 </head>
 <body>
 
-    <header class="header">
-        <a href="index.html" class="logo">SEMILLA VIVA</a>
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="tienda.html">Tienda</a>
-            <a href="tienda.html">Guía de cultivo</a>
-        </nav>
-        <a href="#" class="cesta">Mi cesta</a>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand logo">SEMILLA VIVA</a>
+            <!-- Menú del móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-warning">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="zanahoria.html#guia">Guía de cultivo</a></li>
+                </ul>
+                <div class="d-flex gap-2 py-2 py-lg-0">
+                    <a href="login.html" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a href="pago.html" class="btn btn-primary">Mi cesta <span class="badge text-bg-light" id="contador-cesta">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <main class="detalle">
-        <div class="contenedor estrecho">
+        <div class="container estrecho">
+
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="tienda.html">Tienda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Zanahoria Nantesa</li>
+                </ol>
+            </nav>
 
             <section class="detalle-principal">
                 <img src="img/zanahorias.webp" alt="Zanahorias recién recolectadas" class="detalle-imagen">
@@ -33,10 +55,7 @@
                     <p class="intro">Raíz dulce y crujiente, ideal para<br>sembrar en bancales o mesas de cultivo.</p>
                     <p class="precio-grande">1,95 €</p>
 
-                    <form action="#" method="get">
-                        <input type="hidden" name="producto" value="zanahoria-nantesa">
-                        <button type="submit" class="boton boton-verde">Añadir a la cesta</button>
-                    </form>
+                    <button type="button" class="boton boton-verde boton-grande btn-anadir" data-nombre="Zanahoria Nantesa" data-precio="1.95">Añadir a la cesta</button>
 
                     <div class="garantias">
                         <h2>Envío y compra con tranquilidad</h2>
@@ -56,7 +75,8 @@
                 </div>
             </section>
 
-            <section class="consejo">
+            <!-- Guía de cultivo (enlace de la navbar) -->
+            <section class="consejo" id="guia">
                 <h2>Para que tu cultivo empiece bien</h2>
                 <p class="intro">Prepara un sustrato ligero y mantenlo húmedo sin encharcar. Siembra a poca profundidad, coloca el semillero en un lugar luminoso y trasplanta cuando la planta tenga sus primeras hojas verdaderas.</p>
                 <a href="tienda.html" class="boton boton-verde">Explorar más semillas</a>
@@ -83,10 +103,10 @@
         </div>
     </main>
 
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="contenedor">
-            <div class="footer-invitacion">
+        <div class="container">
+            <div class="footer-invitacion d-flex flex-wrap justify-content-between align-items-md-center gap-3">
                 <div>
                     <p class="etiqueta">SEMBRAR ES EMPEZAR</p>
                     <h2>Lo bueno crece contigo.</h2>
@@ -95,33 +115,43 @@
             </div>
 
             <div class="footer-columnas">
-                <div class="footer-columna">
-                    <p class="footer-marca">SEMILLA VIVA</p>
-                    <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
-                </div>
-                <div class="footer-columna">
-                    <h3>Explora</h3>
-                    <div class="footer-enlaces">
-                        <a href="index.html">Inicio</a>
-                        <a href="tienda.html">Tienda de semillas</a>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <p class="footer-marca">SEMILLA VIVA</p>
+                        <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
                     </div>
-                </div>
-                <div class="footer-columna">
-                    <h3>Síguenos en el campo</h3>
-                    <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
-                    <div class="redes">
-                        <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
-                        <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                    <div class="col-6 col-md-3">
+                        <h3>Explora</h3>
+                        <div class="footer-enlaces">
+                            <a href="index.html">Inicio</a>
+                            <a href="tienda.html">Tienda de semillas</a>
+                            <a href="novedades.html">Huerto de invierno</a>
+                            <a href="login.html">Mi cuenta</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Síguenos en el campo</h3>
+                        <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
+                        <div class="redes">
+                            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
+                            <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-cierre">
-                <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
+            <div class="footer-cierre d-flex flex-wrap justify-content-between gap-3">
+                <div>
+                    <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
+                </div>
                 <p>Envíos a toda España · Cuidamos cada pedido</p>
             </div>
         </div>
     </footer>
+
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script src="js/cesta.js"></script>
 
 </body>
 </html>

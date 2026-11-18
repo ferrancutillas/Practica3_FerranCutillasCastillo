@@ -1,0 +1,48 @@
+// ===== VARIABLES =====
+
+// Colores de la web
+$verde: #31523b;
+$verde-claro: #728574;
+$crema: #e9e2c9;
+$fondo: #f4efe4;
+$blanco-roto: #faf7f0;
+$texto: #302c21;
+$borde: #d8cfbc;
+$salvia: #dfe2c4;
+$naranja: #c8642a;   // insignias
+$gris-texto: #5e675d;
+$verde-noche: #152a1d; // cajas oscuras sobre fotos
+
+// Tema de Bootstrap (va antes de importarlo)
+$primary: $verde;
+$secondary: $verde-claro;
+$success: #4f7d4a;
+$warning: $naranja;
+$light: $crema;
+$dark: $texto;
+
+// Fondo, texto y bordes
+$body-bg: $fondo;
+$body-color: $texto;
+$border-color: $borde;
+$link-color: $verde;
+$input-bg: #fff; // campos en blanco
+$list-group-bg: $blanco-roto; // fondo de las listas
+
+// Tipografía
+$font-family-sans-serif: 'Inter', sans-serif;
+$headings-font-weight: 800;
+$btn-font-weight: 700;
+
+// Esquinas rectas
+$enable-rounded: false;
+
+// Contenedores (20px de margen a cada lado)
+$container-padding-x: 40px;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1400px
+);

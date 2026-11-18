@@ -12,15 +12,28 @@
 </head>
 <body>
 
-    <header class="header">
-        <a href="index.html" class="logo">SEMILLA VIVA</a>
-        <nav class="nav">
-            <a href="index.html" class="activo">Inicio</a>
-            <a href="tienda.html">Tienda</a>
-            <a href="tienda.html">Guía de cultivo</a>
-        </nav>
-        <a href="#" class="cesta">Mi cesta</a>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand logo">SEMILLA VIVA</a>
+            <!-- Menú del móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-warning">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="zanahoria.html#guia">Guía de cultivo</a></li>
+                </ul>
+                <div class="d-flex gap-2 py-2 py-lg-0">
+                    <a href="login.html" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a href="pago.html" class="btn btn-primary">Mi cesta <span class="badge text-bg-light" id="contador-cesta">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <main>
 
@@ -35,12 +48,12 @@
                 <p class="etiqueta">SEMILLAS PARA CULTIVAR A TU MANERA</p>
                 <h1>Haz que cada semilla cuente.</h1>
                 <p class="intro">Del primer brote a tu próxima cosecha. Semillas escogidas para llenar de vida tu huerto, terraza o jardín.</p>
-                <a href="tienda.html" class="boton boton-crema">Comprar semillas</a>
+                <a href="tienda.html" class="boton boton-crema boton-grande">Comprar semillas</a>
             </div>
         </section>
 
         <!-- Ofertas -->
-        <section class="contenedor ofertas">
+        <section class="container ofertas">
             <a href="tienda.html" class="oferta oferta-clara">
                 <h2>Ofertas top de la semana</h2>
                 <p>Hasta un 20% en semillas de huerto.</p>
@@ -59,7 +72,7 @@
         </section>
 
         <!-- Categorías -->
-        <section class="contenedor categorias-seccion">
+        <section class="container categorias-seccion">
             <h2>Explora las categorías destacadas</h2>
             <div class="categorias">
                 <a href="tienda.html" class="categoria">
@@ -82,7 +95,7 @@
         </section>
 
         <!-- Audio -->
-        <section class="contenedor multimedia">
+        <section class="container multimedia">
             <div class="multimedia-imagen">
                 <img src="img/flores-polinizadores.webp" alt="Manos cuidando una planta de pimiento en el huerto">
             </div>
@@ -102,7 +115,7 @@
         </section>
 
         <!-- Productos -->
-        <section class="contenedor productos-seccion">
+        <section class="container productos-seccion">
             <div class="productos-cabecera">
                 <h2>Una buena cosecha empieza aquí</h2>
                 <a href="tienda.html" class="ver-todo">Ver toda la tienda</a>
@@ -142,9 +155,10 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="contenedor">
-            <div class="footer-invitacion">
+        <div class="container">
+            <div class="footer-invitacion d-flex flex-wrap justify-content-between align-items-md-center gap-3">
                 <div>
                     <p class="etiqueta">SEMBRAR ES EMPEZAR</p>
                     <h2>Lo bueno crece contigo.</h2>
@@ -153,34 +167,44 @@
             </div>
 
             <div class="footer-columnas">
-                <div class="footer-columna">
-                    <p class="footer-marca">SEMILLA VIVA</p>
-                    <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
-                </div>
-                <div class="footer-columna">
-                    <h3>Explora</h3>
-                    <div class="footer-enlaces">
-                        <a href="index.html">Inicio</a>
-                        <a href="tienda.html">Tienda de semillas</a>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <p class="footer-marca">SEMILLA VIVA</p>
+                        <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
                     </div>
-                </div>
-                <div class="footer-columna">
-                    <h3>Síguenos en el campo</h3>
-                    <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
-                    <div class="redes">
-                        <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
-                        <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                    <div class="col-6 col-md-3">
+                        <h3>Explora</h3>
+                        <div class="footer-enlaces">
+                            <a href="index.html">Inicio</a>
+                            <a href="tienda.html">Tienda de semillas</a>
+                            <a href="novedades.html">Huerto de invierno</a>
+                            <a href="login.html">Mi cuenta</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Síguenos en el campo</h3>
+                        <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
+                        <div class="redes">
+                            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
+                            <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-cierre">
-                <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
-                <p class="licencia">Vídeo: <a href="https://www.pexels.com/video/a-person-putting-seeds-on-the-soil-7781752/" target="_blank">RDNE Stock project</a> (Pexels) · Audio: "Garden Sunny Day" de Modding (Freesound) vía <a href="https://pixabay.com/sound-effects/" target="_blank">Pixabay</a></p>
+            <div class="footer-cierre d-flex flex-wrap justify-content-between gap-3">
+                <div>
+                    <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
+                    <p class="licencia">Vídeo: <a href="https://www.pexels.com/video/a-person-putting-seeds-on-the-soil-7781752/" target="_blank">RDNE Stock project</a> (Pexels) · Audio: "Garden Sunny Day" de Modding (Freesound) vía <a href="https://pixabay.com/sound-effects/" target="_blank">Pixabay</a></p>
+                </div>
                 <p>Envíos a toda España · Cuidamos cada pedido</p>
             </div>
         </div>
     </footer>
+
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script src="js/cesta.js"></script>
 
 </body>
 </html>

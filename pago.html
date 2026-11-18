@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago | Semilla Viva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand logo">SEMILLA VIVA</a>
+            <!-- Menú del móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-warning">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="zanahoria.html#guia">Guía de cultivo</a></li>
+                </ul>
+                <div class="d-flex gap-2 py-2 py-lg-0">
+                    <a href="login.html" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a href="pago.html" class="btn btn-primary">Mi cesta <span class="badge text-bg-light" id="contador-cesta">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pagina-formulario">
+        <div class="container estrecho">
+
+            <p class="etiqueta">ÚLTIMO PASO</p>
+            <h1 class="mb-4">Finaliza tu pedido</h1>
+
+            <!-- Basado en el ejemplo Checkout de Bootstrap -->
+            <div class="row g-4">
+
+                <!-- Cesta -->
+                <div class="col-lg-5 order-lg-last">
+                    <div class="bloque-pago resumen-cesta">
+                        <h2 class="d-flex justify-content-between align-items-center">
+                            Tu cesta <span class="badge text-bg-primary" id="cesta-unidades">0</span>
+                        </h2>
+
+                        <!-- Productos (los pone cesta.js) -->
+                        <ul class="list-group mb-3" id="lista-cesta"></ul>
+
+                        <!-- Envío y total -->
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Envío <small>(gratis desde 15 €)</small></span>
+                                <span id="cesta-envio">Gratis</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between fw-bold">
+                                <span>Total</span>
+                                <span id="cesta-total">0,00 €</span>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="tienda.html" class="link-primary fw-bold">← Seguir comprando</a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" id="vaciar-cesta">Vaciar cesta</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de envío y pago -->
+                <div class="col-lg-7">
+                    <form class="form-aviso" action="#">
+
+                        <div class="bloque-pago mb-4">
+                            <h2>Datos de envío</h2>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="apellidos" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="apellidos" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" placeholder="nombre@correo.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="direccion" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="direccion" placeholder="Calle, número, piso" required>
+                                </div>
+                                <div class="col-sm-7">
+                                    <label for="provincia" class="form-label">Provincia</label>
+                                    <select class="form-select" id="provincia" required>
+                                        <option value="">Elige...</option>
+                                        <option>Alicante</option>
+                                        <option>Barcelona</option>
+                                        <option>Madrid</option>
+                                        <option>Sevilla</option>
+                                        <option>Valencia</option>
+                                        <option>Otra</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-5">
+                                    <label for="cp" class="form-label">Código postal</label>
+                                    <input type="text" class="form-control" id="cp" pattern="[0-9]{5}" placeholder="03001" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bloque-pago mb-4">
+                            <h2>Método de pago</h2>
+                            <div class="d-flex gap-4 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="metodo" id="tarjeta" checked>
+                                    <label class="form-check-label" for="tarjeta">Tarjeta</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="metodo" id="bizum">
+                                    <label class="form-check-label" for="bizum">Bizum</label>
+                                </div>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="titular" class="form-label">Titular de la tarjeta</label>
+                                    <input type="text" class="form-control" id="titular" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="numero" class="form-label">Número de tarjeta</label>
+                                    <input type="text" class="form-control" id="numero" inputmode="numeric" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <label for="caducidad" class="form-label">Caducidad</label>
+                                    <input type="text" class="form-control" id="caducidad" placeholder="MM/AA" required>
+                                </div>
+                                <div class="col-6 col-sm-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" inputmode="numeric" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100" id="boton-confirmar">Confirmar pedido</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de aviso -->
+    <div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisoTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalAvisoTitulo">¡Pedido realizado!</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Gracias por tu compra. Prepararemos tus semillas con cuidado y te llegarán en 24-48 horas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-invitacion d-flex flex-wrap justify-content-between align-items-md-center gap-3">
+                <div>
+                    <p class="etiqueta">SEMBRAR ES EMPEZAR</p>
+                    <h2>Lo bueno crece contigo.</h2>
+                </div>
+                <a href="tienda.html" class="boton boton-crema">Explorar semillas</a>
+            </div>
+
+            <div class="footer-columnas">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <p class="footer-marca">SEMILLA VIVA</p>
+                        <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3>Explora</h3>
+                        <div class="footer-enlaces">
+                            <a href="index.html">Inicio</a>
+                            <a href="tienda.html">Tienda de semillas</a>
+                            <a href="novedades.html">Huerto de invierno</a>
+                            <a href="login.html">Mi cuenta</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Síguenos en el campo</h3>
+                        <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
+                        <div class="redes">
+                            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
+                            <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-cierre d-flex flex-wrap justify-content-between gap-3">
+                <div>
+                    <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
+                </div>
+                <p>Envíos a toda España · Cuidamos cada pedido</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script src="js/cesta.js"></script>
+    <script src="js/aviso.js"></script>
+
+</body>
+</html>

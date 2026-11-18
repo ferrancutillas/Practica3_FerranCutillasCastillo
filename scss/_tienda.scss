@@ -1,0 +1,142 @@
+// ===== TIENDA Y NOVEDADES =====
+
+// Tarjetas de producto
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.producto {
+    @include caja-clara;
+    flex: 1 1 200px;
+    padding: 14px;
+
+    img {
+        height: 180px;
+    }
+}
+
+.producto-insignia {
+    margin: 12px 0;
+    font-size: 12px;
+    font-weight: 800;
+    color: $naranja;
+}
+
+.producto-nombre {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.producto-descripcion {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $gris-texto;
+}
+
+.producto-precio,
+.precio-grande {
+    font-size: 22px;
+    font-weight: 800;
+    color: $verde;
+}
+
+// Página tienda
+.tienda,
+.novedades {
+    padding: 40px 0 60px;
+}
+
+.tienda {
+    h1 {
+        margin: 18px 0;
+    }
+
+    // En columna para dejar los botones abajo
+    .producto {
+        display: flex;
+        flex-direction: column;
+        min-height: 390px;
+    }
+}
+
+// Botones "Ver más" y "Añadir"
+.producto-acciones {
+    display: flex;
+    flex-wrap: wrap; // si no caben, uno debajo del otro
+    gap: 8px;
+    margin-top: auto; // botones al final de la tarjeta
+    padding-top: 14px;
+
+    .btn {
+        flex: 1; // mismo ancho
+        padding-left: 6px;
+        padding-right: 6px;
+        font-size: 14px;
+        white-space: nowrap; // el texto en una línea
+    }
+}
+
+.aviso {
+    display: flex;
+    gap: 6px 24px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 18px 24px;
+    background: $crema;
+    border: 1px solid $borde;
+    font-size: 15px;
+    font-weight: 500;
+
+    strong {
+        font-size: 17px;
+        font-weight: 800;
+    }
+}
+
+// Página novedades: cabecera con foto de fondo
+.coleccion-cabecera {
+    padding: 60px 40px;
+    margin-bottom: 30px;
+    color: #fff;
+    background: linear-gradient(rgba($verde-noche, 0.75), rgba($verde-noche, 0.75)),
+        url('../img/campo.webp') center / cover;
+
+    .etiqueta {
+        color: $crema;
+    }
+
+    h1 {
+        margin-bottom: 14px;
+    }
+
+    .intro {
+        max-width: 560px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 36px 20px;
+    }
+}
+
+// Cards de la colección
+.card-semilla {
+    @include caja-clara;
+
+    .card-img-top {
+        height: 220px;
+    }
+
+    .card-title {
+        font-size: 19px;
+    }
+
+    .card-text {
+        font-size: 14px;
+        line-height: 1.45;
+        color: $gris-texto;
+    }
+}

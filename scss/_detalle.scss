@@ -1,0 +1,149 @@
+// ===== DETALLE DE PRODUCTO (zanahoria y kit) =====
+
+.detalle {
+    padding: 30px 0 70px;
+}
+
+// Breadcrumb
+.breadcrumb {
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detalle-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.detalle-imagen,
+.detalle-info {
+    flex: 1 1 400px;
+    min-width: 0;
+}
+
+.detalle-imagen {
+    height: 500px;
+
+    @media (max-width: 900px) {
+        height: 380px;
+    }
+
+    @media (max-width: 600px) {
+        height: 260px;
+    }
+}
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.precio-grande {
+    font-size: 32px;
+}
+
+// Garantías
+.garantias {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 22px;
+    background: $crema;
+    font-size: 13px;
+    line-height: 1.4;
+
+    h2 {
+        font-size: 15px;
+        letter-spacing: 0;
+    }
+
+    h3 {
+        margin-bottom: 4px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+.garantia + .garantia {
+    padding-top: 13px;
+    border-top: 1px solid $borde;
+}
+
+.consejo {
+    @include caja-clara;
+    margin: 40px 0;
+    padding: 30px;
+    scroll-margin-top: 90px; // para que la navbar no tape el título
+
+    .intro {
+        max-width: 740px;
+        margin: 18px 0;
+    }
+}
+
+// Pasos de cultivo
+.pasos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.paso {
+    @include caja-clara;
+    flex: 1 1 250px;
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+
+    .etiqueta {
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+// Kit: carrusel, lista y acordeón
+.carrusel-kit {
+    img {
+        height: 480px;
+
+        @media (max-width: 600px) {
+            height: 280px;
+        }
+    }
+
+    .carousel-caption {
+        bottom: 48px; // encima de los indicadores
+        background: rgba($verde-noche, 0.8);
+        padding: 10px 16px;
+        font-weight: 600;
+    }
+}
+
+.kit-incluye {
+    align-self: stretch;
+
+    .list-group-item {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.kit-cantidad {
+    width: 90px;
+}
+
+.acordeon-kit {
+    margin-top: 50px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+}
