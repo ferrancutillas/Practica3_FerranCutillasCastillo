@@ -1,0 +1,18 @@
+{
+  "name": "semilla-viva",
+  "version": "1.0.0",
+  "description": "Web de la tienda de semillas Semilla Viva (Diseño de Interfaces Web)",
+  "private": true,
+  "scripts": {
+    "sass": "sass --load-path=node_modules scss/main.scss css/style.css --no-source-map --quiet-deps --silence-deprecation=import",
+    "sass:watch": "sass --load-path=node_modules scss/main.scss css/style.css --no-source-map --quiet-deps --silence-deprecation=import --watch"
+  },
+  "author": "Ferran Cutillas Castillo",
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {
+    "bootstrap": "^5.3.9"
+  },
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}

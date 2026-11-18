@@ -1,0 +1,106 @@
+// ===== FOOTER =====
+
+.footer {
+    padding: 50px 0 24px;
+    background: $verde;
+    color: #fff;
+    font-size: 15px;
+
+    .etiqueta {
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: $crema;
+    }
+
+    h2 {
+        font-size: 34px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+
+        @media (max-width: 900px) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 11px;
+        font-size: 16px;
+    }
+}
+
+// Frase y botón de arriba
+.footer-invitacion,
+.footer-columnas {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $verde-claro;
+}
+
+.footer-columnas {
+    padding-top: 30px;
+}
+
+.footer-marca {
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+
+    + p {
+        max-width: 290px;
+    }
+}
+
+.footer-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    font-weight: 500;
+}
+
+// Redes sociales
+.redes {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border: 1px solid $crema;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    img {
+        width: 18px;
+    }
+}
+
+.footer-cierre {
+    padding-top: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+// Licencia Creative Commons
+.licencia {
+    a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}
+
+.licencia-iconos {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+
+    img {
+        width: 1.1em;
+        height: 1.1em;
+        filter: invert(1); // iconos negros a blanco
+    }
+}

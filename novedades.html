@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huerto de invierno | Semilla Viva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand logo">SEMILLA VIVA</a>
+            <!-- Menú del móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="novedades.html">Novedades <span class="badge text-bg-warning">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="zanahoria.html#guia">Guía de cultivo</a></li>
+                </ul>
+                <div class="d-flex gap-2 py-2 py-lg-0">
+                    <a href="login.html" class="btn btn-outline-primary">Iniciar sesión</a>
+                    <a href="pago.html" class="btn btn-primary">Mi cesta <span class="badge text-bg-light" id="contador-cesta">0</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="novedades">
+        <div class="container">
+
+            <!-- Cabecera de la colección -->
+            <section class="coleccion-cabecera">
+                <p class="etiqueta">NUEVA COLECCIÓN · <span class="badge text-bg-light">Otoño-Invierno</span></p>
+                <h1>Huerto de invierno</h1>
+                <p class="intro">Semillas que aguantan el frío y te dan cosecha cuando el resto del huerto descansa. Siembra ahora y recoge durante todo el invierno.</p>
+            </section>
+
+            <!-- Aviso de lanzamiento -->
+            <div class="alert alert-primary" role="alert">
+                <strong>Lanzamiento:</strong> 10% de descuento en toda la colección y envío gratis en pedidos de más de 15 €.
+            </div>
+
+            <!-- Productos (1, 2 o 3 columnas) -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mt-1">
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/cultivo.webp" class="card-img-top" alt="Cultivo joven en tierra fértil">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2">
+                                <span class="badge text-bg-warning">Nuevo</span>
+                                <span class="badge text-bg-primary">Kit completo</span>
+                            </div>
+                            <h3 class="card-title">Kit Huerto de Invierno</h3>
+                            <p class="card-text">Seis variedades de temporada, sustrato y guía de siembra para empezar tu huerto en frío.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">12,90 €</p>
+                                <a href="kit-detalle.html" class="btn btn-primary">Ver el kit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/rabanos.webp" class="card-img-top" alt="Rábanos frescos en una cesta">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2"><span class="badge text-bg-secondary">Resiste heladas</span></div>
+                            <h3 class="card-title">Rábano Negro Largo</h3>
+                            <p class="card-text">Raíz de piel oscura y sabor intenso que se conserva semanas en la nevera.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">1,85 €</p>
+                                <button type="button" class="btn btn-outline-primary btn-anadir" data-nombre="Rábano Negro Largo" data-precio="1.85">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/zanahorias.webp" class="card-img-top" alt="Zanahorias recién recolectadas">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2"><span class="badge text-bg-secondary">Resiste heladas</span></div>
+                            <h3 class="card-title">Zanahoria Chantenay</h3>
+                            <p class="card-text">Zanahoria corta y robusta, perfecta para suelos pesados y siembras de otoño.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">1,95 €</p>
+                                <button type="button" class="btn btn-outline-primary btn-anadir" data-nombre="Zanahoria Chantenay" data-precio="1.95">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/albahaca.webp" class="card-img-top" alt="Flores de colores en el jardín">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2"><span class="badge text-bg-warning">-10%</span></div>
+                            <h3 class="card-title">Flores de invierno</h3>
+                            <p class="card-text">Caléndulas y pensamientos que aguantan el frío y llenan de color el huerto.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">4,50 €</p>
+                                <button type="button" class="btn btn-outline-primary btn-anadir" data-nombre="Flores de invierno" data-precio="4.50">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/calabaza.webp" class="card-img-top" alt="Calabazas en cosecha">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2"><span class="badge text-bg-primary">Larga conservación</span></div>
+                            <h3 class="card-title">Calabaza Potimarrón</h3>
+                            <p class="card-text">Pequeña, dulce y con sabor a castaña. Aguanta meses guardada en la despensa.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">2,60 €</p>
+                                <button type="button" class="btn btn-outline-primary btn-anadir" data-nombre="Calabaza Potimarrón" data-precio="2.60">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card-semilla h-100">
+                        <img src="img/campo.webp" class="card-img-top" alt="Campo verde preparado para cultivar">
+                        <div class="card-body d-flex flex-column">
+                            <div class="mb-2"><span class="badge text-bg-primary">Mejora el suelo</span></div>
+                            <h3 class="card-title">Mezcla de abono verde</h3>
+                            <p class="card-text">Veza y avena para sembrar en otoño: protegen la tierra y la enriquecen para la primavera.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-auto pt-3">
+                                <p class="producto-precio">3,20 €</p>
+                                <button type="button" class="btn btn-outline-primary btn-anadir" data-nombre="Mezcla de abono verde" data-precio="3.20">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-invitacion d-flex flex-wrap justify-content-between align-items-md-center gap-3">
+                <div>
+                    <p class="etiqueta">SEMBRAR ES EMPEZAR</p>
+                    <h2>Lo bueno crece contigo.</h2>
+                </div>
+                <a href="tienda.html" class="boton boton-crema">Explorar semillas</a>
+            </div>
+
+            <div class="footer-columnas">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <p class="footer-marca">SEMILLA VIVA</p>
+                        <p>Semillas elegidas con cariño para huertos, balcones y jardines. Del campo a tus manos, una cosecha cada vez.</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3>Explora</h3>
+                        <div class="footer-enlaces">
+                            <a href="index.html">Inicio</a>
+                            <a href="tienda.html">Tienda de semillas</a>
+                            <a href="novedades.html">Huerto de invierno</a>
+                            <a href="login.html">Mi cuenta</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h3>Síguenos en el campo</h3>
+                        <p>Ideas de siembra, cosechas de temporada e inspiración para cultivar cada día.</p>
+                        <div class="redes">
+                            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.svg" alt="">Instagram</a>
+                            <a href="https://www.pinterest.com/" target="_blank"><img src="img/pinterest.svg" alt="">Pinterest</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-cierre d-flex flex-wrap justify-content-between gap-3">
+                <div>
+                    <p class="licencia"><a href="https://practica3ferrancutillascastillo.vercel.app/">Semilla Viva</a> © 2026 by <a href="https://github.com/ferrancutillas">Ferran Cutillas Castillo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener">CC BY-NC-SA 4.0</a><span class="licencia-iconos"><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></span></p>
+                </div>
+                <p>Envíos a toda España · Cuidamos cada pedido</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+    <script src="js/cesta.js"></script>
+
+</body>
+</html>

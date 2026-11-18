@@ -1,0 +1,202 @@
+// ===== INICIO =====
+
+// Hero con vídeo
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 65vh;
+    padding: 40px 6%;
+    color: #fff;
+    position: relative;
+
+    .etiqueta {
+        color: $crema;
+    }
+
+    h1 {
+        max-width: 480px;
+        margin: 14px 0 18px;
+        font-size: 58px;
+        line-height: 1.05;
+        letter-spacing: -2px;
+    }
+
+    .intro {
+        max-width: 440px;
+        margin-bottom: 20px;
+        font-size: 17px;
+    }
+
+    @media (max-width: 900px) {
+        min-height: 440px;
+
+        h1 {
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        min-height: auto;
+        padding: 24px 16px;
+
+        h1 {
+            font-size: 34px;
+        }
+    }
+}
+
+// Vídeo de fondo detrás de la caja de texto
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-caja {
+    position: relative;
+    flex: 0 1 660px;
+    padding: 32px 36px 32px 33px;
+    background: rgba($verde-noche, 0.82);
+    border-left: 3px solid $crema;
+
+    @media (max-width: 600px) {
+        padding: 24px 20px;
+    }
+}
+
+// Ofertas
+.ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.oferta {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 170px;
+    padding: 24px;
+    font-weight: 500;
+
+    h2 {
+        font-size: 26px;
+        line-height: 1.1;
+        letter-spacing: 0;
+    }
+
+    p:last-child {
+        font-size: 14px;
+        font-weight: 800;
+    }
+}
+
+.oferta-clara {
+    @include caja-clara;
+}
+
+.oferta-salvia {
+    background: $salvia;
+}
+
+.oferta-verde {
+    background: $verde;
+    color: #fff;
+}
+
+// Categorías
+.categorias-seccion h2 {
+    margin: 32px 0 18px;
+}
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.categoria {
+    flex: 1 1 200px;
+    padding: 10px 10px 16px;
+    background: $blanco-roto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+
+    img {
+        height: 150px;
+        margin-bottom: 14px;
+    }
+
+    @media (max-width: 600px) {
+        flex-basis: calc(50% - 8px);
+
+        img {
+            height: 110px;
+        }
+    }
+}
+
+// Sonidos del huerto (audio)
+.multimedia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin-top: 50px;
+}
+
+.multimedia-imagen,
+.multimedia-texto {
+    flex: 1 1 400px;
+    min-width: 0;
+}
+
+.multimedia-imagen img {
+    aspect-ratio: 16 / 9;
+}
+
+.multimedia-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.multimedia-audio {
+    summary {
+        cursor: pointer;
+        font-weight: 800;
+        color: $verde;
+    }
+
+    audio {
+        width: 100%;
+        margin-top: 12px;
+    }
+}
+
+// Productos destacados
+.productos-seccion {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.productos-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.ver-todo {
+    font-size: 14px;
+    font-weight: 700;
+    color: $verde;
+}
