@@ -203,3 +203,43 @@
     font-weight: 700;
     color: $verde;
 }
+
+// Opiniones (carrusel de Bootstrap)
+.opiniones {
+    margin-top: 50px;
+
+    h2 {
+        margin-bottom: 18px;
+    }
+
+    .carousel {
+        background: $verde;
+        color: #fff;
+    }
+}
+
+.opinion {
+    margin: 0;
+    padding: 60px 15% 70px;
+    text-align: center;
+
+    p {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    cite {
+        font-style: normal;
+        color: $crema;
+    }
+
+    @media (max-width: 600px) {
+        padding: 40px 50px 56px;
+
+        p {
+            font-size: 18px;
+        }
+    }
+}

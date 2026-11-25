@@ -59,17 +59,36 @@ document.querySelectorAll('.btn-anadir').forEach(function (boton) {
         const cantidad = campoCantidad ? Math.max(1, Number(campoCantidad.value) || 1) : 1;
 
         anadirProducto(boton.dataset.nombre, Number(boton.dataset.precio), cantidad);
-
-        // Aviso en el propio botón
-        const textoOriginal = boton.textContent;
-        boton.textContent = '✓ Añadido';
-        boton.disabled = true;
-        setTimeout(function () {
-            boton.textContent = textoOriginal;
-            boton.disabled = false;
-        }, 1200);
+        mostrarToast(boton.dataset.nombre);
     });
 });
+
+// ===== TOAST "AÑADIDO A LA CESTA" =====
+// El HTML se crea aquí para no repetirlo en cada página
+function mostrarToast(nombre) {
+    let toast = document.getElementById('toastCesta');
+
+    if (!toast) {
+        const contenedor = document.createElement('div');
+        contenedor.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+        contenedor.innerHTML = `
+            <div id="toastCesta" class="toast" role="status" aria-live="polite" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Mi cesta</strong>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">
+                    <p id="toast-texto" class="mb-2"></p>
+                    <a href="pago.html" class="btn btn-primary btn-sm">Ir a pagar</a>
+                </div>
+            </div>`;
+        document.body.appendChild(contenedor);
+        toast = document.getElementById('toastCesta');
+    }
+
+    document.getElementById('toast-texto').textContent = nombre + ' añadido a la cesta.';
+    bootstrap.Toast.getOrCreateInstance(toast).show();
+}
 
 // ===== PÁGINA DE PAGO =====
 const lista = document.getElementById('lista-cesta');
